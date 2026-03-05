@@ -1,0 +1,7 @@
+node_modules/
+data/*.sqlite
+public/assets/css/maps/
+public/assets/js/maps/
+.DS_Store
+Thumbs.db
+*.log

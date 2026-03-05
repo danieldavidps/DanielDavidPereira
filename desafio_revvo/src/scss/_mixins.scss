@@ -1,0 +1,56 @@
+// =============================================
+//  _mixins.scss — LEO Platform
+// =============================================
+
+@mixin respond-to($bp) {
+  @if $bp == mobile  { @media (max-width: #{$bp-mobile})  { @content; } }
+  @if $bp == tablet  { @media (max-width: #{$bp-tablet})  { @content; } }
+  @if $bp == desktop { @media (min-width: #{$bp-desktop}) { @content; } }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin truncate($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin button-reset {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: $font-primary;
+  padding: 0;
+}
+
+@mixin card-hover {
+  transition: box-shadow $transition-base, transform $transition-base;
+  &:hover {
+    box-shadow: $box-shadow-hover;
+    transform: translateY(-2px);
+  }
+}
+
+@mixin absolute-cover {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+@mixin text-upper {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
