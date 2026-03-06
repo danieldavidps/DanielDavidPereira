@@ -6,10 +6,10 @@ Solução completa para o Desafio Revvo, desenvolvida com PHP puro, SCSS, JavaSc
 
 ---
 
-## Sobre mim
+## 👨‍💻 Desenvolvedor
 
-**Daniel David**
-Desenvolvedor de E-Learning | HTML · CSS ·  PHP · Moodle · Design Instrucional
+**Daniel**
+Desenvolvedor de E-Learning | HTML · CSS · SCSS · PHP · JavaScript · Moodle · Design Instrucional
 
 ---
 
@@ -56,7 +56,7 @@ desafio_revvo/
 
 ---
 
-## Rodando a aplicação
+## 🚀 Como rodar
 
 ### Pré-requisitos
 - **PHP 7.4+** com extensão `pdo_sqlite` habilitada
@@ -92,7 +92,8 @@ npm start
 # → http://localhost:8000
 ```
 
-> O banco SQLite é criado automaticamente em `data/leo.sqlite` > na primeira requisição. Não é necessária nenhuma configuração adicional.
+> O banco SQLite é criado automaticamente em `data/leo.sqlite`
+> na primeira requisição. Não é necessária nenhuma configuração adicional.
 
 ### 5. Deploy em Apache
 - Aponte o DocumentRoot para a pasta `public/`
@@ -145,6 +146,28 @@ npm start
   "bg_color":    "#1a1a2e"
 }
 ```
+
+---
+
+## ✅ Checklist do Desafio
+
+| Requisito                                              | Status |
+|--------------------------------------------------------|--------|
+| HTML5 semântico e acessível                            | ✔      |
+| CSS via SCSS com variáveis, mixins e partials          | ✔      |
+| JavaScript vanilla (sem frameworks)                    | ✔      |
+| Gulp como automatizador (sass, js, watch, BrowserSync) | ✔      |
+| Grid responsivo (desktop, tablet, mobile)              | ✔      |
+| Slider com imagem, título, descrição e botão           | ✔      |
+| CRUD completo de Cursos                                | ✔      |
+| CRUD completo de Slides (imagem, título, desc, botão)  | ✔      |
+| Modal apenas no primeiro acesso (cookie PHP)           | ✔      |
+| PHP puro, sem frameworks                               | ✔      |
+| Banco de dados com PDO (SQLite, migrável p/ MySQL)     | ✔      |
+| API REST JSON (GET/POST/PUT/DELETE)                    | ✔      |
+| README completo                                        | ✔      |
+
+---
 
 ## 🔄 Migração para MySQL
 

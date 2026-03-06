@@ -22,6 +22,14 @@ $firstVisit = isFirstVisit();
   <meta name="description" content="LEO — Plataforma de Aprendizagem Online">
   <title>LEO — Plataforma de Aprendizagem</title>
   <link rel="stylesheet" href="assets/css/main.css">
+  <?php
+    // Detecta o base URL dinamicamente para o JS usar nas chamadas de API
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+    $host     = $_SERVER['HTTP_HOST'];
+    $script   = dirname($_SERVER['SCRIPT_NAME']); // ex: /desafio_revvo/public
+    $baseUrl  = rtrim($protocol . '://' . $host . $script, '/');
+  ?>
+  <meta name="base-url" content="<?= htmlspecialchars($baseUrl) ?>">
 </head>
 <body>
 

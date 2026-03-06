@@ -95,13 +95,30 @@
   /* ===================================================
      CRUD — SHARED HELPERS
   =================================================== */
+
+  // Detecta o base path — lê do meta tag emitido pelo PHP (100% confiável)
+  const BASE_URL = (function() {
+    const meta = d.querySelector('meta[name="base-url"]');
+    if (meta) return meta.content.replace(/\/$/, '');
+    // Fallback: detecta pelo src do próprio script
+    const s = d.querySelector('script[src*="main.js"]');
+    if (s) return s.src.replace(/\/assets\/js\/main\.js.*$/, '');
+    return window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '');
+  })();
+
   async function apiRequest(url, method = 'GET', body = null) {
+    // Monta URL absoluta a partir do base detectado
+    const fullUrl = url.startsWith('http') ? url : `${BASE_URL}/${url}`;
     const opts = {
       method,
       headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
     };
     if (body) opts.body = JSON.stringify(body);
-    const res = await fetch(url, opts);
+    const res = await fetch(fullUrl, opts);
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `HTTP ${res.status}`);
+    }
     return res.json();
   }
 
