@@ -12,8 +12,8 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/../../includes/helpers.php';
-require_once dirname(__DIR__) . '/../../includes/CourseModel.php';
+require_once dirname(__DIR__, 2) . '/includes/helpers.php';
+require_once dirname(__DIR__, 2) . '/includes/CourseModel.php';
 
 // CORS para facilitar testes externos
 header('Access-Control-Allow-Origin: *');

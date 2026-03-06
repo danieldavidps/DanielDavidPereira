@@ -12,8 +12,8 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/../../includes/helpers.php';
-require_once dirname(__DIR__) . '/../../includes/SlideModel.php';
+require_once dirname(__DIR__, 2) . '/includes/helpers.php';
+require_once dirname(__DIR__, 2) . '/includes/SlideModel.php';
 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
